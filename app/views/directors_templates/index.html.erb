@@ -1,1 +1,10 @@
 <h1>List of all directors</h1>
+
+<% @list_of_directors.each do |director| %>
+  <tr>
+  <td><%= director.name %></td>
+  <td><%= director.dob %></td>
+  <td><%= director.bio %></td>
+  <td><%= director.id %></td>
+  </tr>
+  <% end %>
