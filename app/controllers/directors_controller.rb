@@ -32,6 +32,8 @@ class DirectorsController < ApplicationController
 
     @direct_id = params.fetch("direct_id")
     
+    @director_bio = Director.where({ id: @direct_id }).at(0)
+
     render({ template: "directors_templates/bio.html.erb" })
   end
 end
