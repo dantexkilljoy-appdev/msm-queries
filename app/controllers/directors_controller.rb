@@ -34,6 +34,8 @@ class DirectorsController < ApplicationController
     
     @director_bio = Director.where({ id: @direct_id }).at(0)
 
+    @director_movie = Movie.where({ director_id: @direct_id })
+
     render({ template: "directors_templates/bio.html.erb" })
   end
 end

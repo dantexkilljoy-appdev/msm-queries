@@ -58,3 +58,66 @@
     <%= time_ago_in_words(@director_bio.updated_at) %> ago
   </dd>
 </dl>
+
+<hr>
+
+<h2>
+Filmography
+</h2>
+
+<table border="1">
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Image
+    </th>
+
+    <th>
+      Title
+    </th>
+
+    <th>
+      Year
+    </th>
+
+    <th>
+      Director
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @director_movie.each do |movie| %>
+  <tr>
+    <td>
+      <%= movie.id %>
+    </td>
+
+    <td>
+      <img src="https://robohash.org/<%= movie.image %>">
+    </td>
+
+    <td>
+      <%= movie.title %>
+    </td>
+
+    <td>
+      <%= movie.year %>
+    </td>
+
+    <td>
+      <%= @director_bio.name %>
+    </td>
+
+    <td>
+      <a href="/movies/<%= movie.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+  
